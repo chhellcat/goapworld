@@ -1,0 +1,15 @@
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\bin\Debug\net10.0\GoapSimulation.exe
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\bin\Debug\net10.0\GoapSimulation.deps.json
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\bin\Debug\net10.0\GoapSimulation.runtimeconfig.json
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\bin\Debug\net10.0\GoapSimulation.dll
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\bin\Debug\net10.0\GoapSimulation.pdb
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.AssemblyInfoInputs.cache
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.AssemblyInfo.cs
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.sourcelink.json
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.dll
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\refint\GoapSimulation.dll
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.pdb
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\GoapSimulation.genruntimeconfig.cache
+C:\Users\Eleve\Documents\NSI\Projet\GoapSimulation\obj\Debug\net10.0\ref\GoapSimulation.dll
