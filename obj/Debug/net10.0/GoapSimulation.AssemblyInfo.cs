@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GoapSimulation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ecf930016991ae71f118eac891e3cab40255e12")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c811bf55ab71f78190aba75b0ac18525af8ebd73")]
 [assembly: System.Reflection.AssemblyProductAttribute("GoapSimulation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GoapSimulation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
