@@ -1,26 +1,4 @@
-﻿using GoapWorld;
+﻿using GoapSimulation;
 
-class Test
-{
-    public string Name;
-
-    public Test(string name)
-    {
-        Name = name;
-    }
-
-    public void Attack()
-    {
-        Console.WriteLine($"{Name} attaque !");
-    }
-}
-
-class Program
-{
-    static void Main()
-    {
-        Test robot = new Test("Bob jhon");
-
-        robot.Attack();
-    }
-}
+InterfaceGraphics interfaceGraphics = new InterfaceGraphics();
+interfaceGraphics.Run();
