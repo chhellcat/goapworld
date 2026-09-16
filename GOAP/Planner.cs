@@ -1,3 +1,5 @@
+using System.Formats.Asn1;
+
 namespace GoapWorld.GOAP;
 
 /// <summary>
@@ -5,5 +7,5 @@ namespace GoapWorld.GOAP;
 /// </summary>
 public class Planner
 {
-    
+    public 
 }
