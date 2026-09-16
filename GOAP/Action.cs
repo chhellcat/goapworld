@@ -1,4 +1,4 @@
-namespace GoapWorld.GOAP
+namespace GoapWorld.GOAP;
 
 /// <summary>
 /// Une action "maillon" de la chaine que forme un plan avec
