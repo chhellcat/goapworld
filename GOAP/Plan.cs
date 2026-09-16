@@ -8,7 +8,7 @@ public struct Plan
     /// <summary>
     /// La liste des conditions objectifs
     /// </summary>
-    public List<ActionFact> Goal;
+    public List<State> Goal;
 
     /// <summary>
     /// Le coût total du plan
@@ -21,7 +21,7 @@ public struct Plan
     public List<Action> Steps = new List<Action>();
 
     // Constructeur
-    public Plan(List<ActionFact> goal)
+    public Plan(List<State> goal)
     {
         Goal = goal;
     }
@@ -33,5 +33,8 @@ public struct Plan
     public void AddStep(Action action)
     {
         Steps.Insert(0, action);
+
+        // Recalcule du côut
+        Cost += action.Cost;
     }
 }
