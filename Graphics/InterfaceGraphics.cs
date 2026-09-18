@@ -1,6 +1,6 @@
 using Raylib_cs;
 
-namespace GoapSimulation;
+namespace GoapWorld.Graphics;
 
 public class InterfaceGraphics
 {

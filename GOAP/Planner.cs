@@ -18,41 +18,34 @@ public class Planner
         return false;
     }
 
-    private Action GetRandomAntecedent(List<State> goalStates, List<Action> availableActions)
+    private Action? GetAntecedent(
+        List<State> goalStates,
+        List<Action> availableActions
+    )
     {
-        List<Action> validActions = [];
-
-        // Parcourt les actions disponibles
-        foreach (Action action in availableActions)
-        {
-            bool valid = true;
-
-            // Vérifie chaque état demandé
-            foreach (State desiredState in goalStates)
-            {
-                bool isDesiredStateInConsequences = IsStateInList(desiredState, action.Consequences);
-
-                // Si on trouve pas un des state demandé dans la liste des conséquence, 
-                // c'est donc invalide
-                if (isDesiredStateInConsequences == false)
-                    valid = false;
-                    break;
-            }
-
-            if (valid)
-                validActions.Add(action);
-        }
-
-        return validActions[0];
+        return availableActions.FirstOrDefault(action =>
+            goalStates.All(goal =>
+                IsStateInList(goal, action.Consequences)
+            )
+        );
     }
 
     /// <param name="goalStates">Liste d'état qui consititues l'objectif</param>
     /// <param name="avaliableActions">Liste d'actions disponibles</param>
     /// <returns>Un plan pour accomplire l'objectif si cela est possible</returns>
-    public Plan MakePlan(List<State> goalStates, List<Action> avaliableActions)
+    public Plan MakePlan(
+        List<State> goalStates,
+        List<Action> availableActions
+    )
     {
-        // 1. Chercher une action qui accomplit cette liste d'état
-        Action antecedent = GetRandomAntecedent(goalStates, avaliableActions);
-        return new Plan();
+        Action? antecedent = GetAntecedent(goalStates, availableActions);
+
+        if (antecedent == null)
+            throw new Exception("Impossible de trouver une action pour cet objectif.");
+
+        Plan plan = new Plan(goalStates);
+        plan.AddStep(antecedent);
+
+        return plan;
     }
 }

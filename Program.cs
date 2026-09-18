@@ -1,15 +1,15 @@
-<<<<<<< HEAD
-﻿using System.Diagnostics;
-using GoapWorld;
 using GoapWorld.GOAP;
 using GoapWorld.GOAP.Actions;
 using GoapAction = GoapWorld.GOAP.Action;
+
+using GoapWorld.Game.Entites;
 
 class Program
 {
     static void Main()
     {
         Planner planner = new Planner();
+        Human BobAtler = new Human("Bob Adtler");
 
         List<GoapAction> availableActions = [
             new EatAction()
@@ -20,9 +20,7 @@ class Program
         ];
 
         Plan resultat = planner.MakePlan(goalStates, availableActions);
-
-        Console.WriteLine("Lets go : ");
-        Console.WriteLine(resultat.Steps);
+        
         Console.WriteLine(resultat);
 
         while (true)
@@ -31,9 +29,3 @@ class Program
         }
     }
 }
-=======
-﻿using GoapSimulation;
-
-InterfaceGraphics interfaceGraphics = new InterfaceGraphics();
-interfaceGraphics.Run();
->>>>>>> 23060af321e4e637b74a76263e60f47658eedf75
