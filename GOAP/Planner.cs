@@ -34,18 +34,28 @@ public class Planner
     /// <param name="avaliableActions">Liste d'actions disponibles</param>
     /// <returns>Un plan pour accomplire l'objectif si cela est possible</returns>
     public Plan MakePlan(
+        List<State> currentStates,
         List<State> goalStates,
         List<Action> availableActions
     )
     {
-        Action? antecedent = GetAntecedent(goalStates, availableActions);
-
-        if (antecedent == null)
-            throw new Exception("Impossible de trouver une action pour cet objectif.");
-
+        // Prépration d'un plan vide : 
         Plan plan = new Plan(goalStates);
-        plan.AddStep(antecedent);
 
-        return plan;
+        // Ajout d'action succésives jusqu'a que le plan soi réalisable
+        while (true)
+        {
+            Action? antecedent = GetAntecedent(goalStates, availableActions);
+
+            if (antecedent == null)
+                Console.WriteLine("Aucun plan possible");
+                return plan;
+
+            plan.AddStep(antecedent);
+
+            ...
+
+            return plan;
+        }
     }
 }
