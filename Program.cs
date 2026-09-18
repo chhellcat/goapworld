@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System.Diagnostics;
 using GoapWorld;
 using GoapWorld.GOAP;
@@ -30,3 +31,9 @@ class Program
         }
     }
 }
+=======
+﻿using GoapSimulation;
+
+InterfaceGraphics interfaceGraphics = new InterfaceGraphics();
+interfaceGraphics.Run();
+>>>>>>> 23060af321e4e637b74a76263e60f47658eedf75
