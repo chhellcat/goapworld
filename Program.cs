@@ -1,26 +1,32 @@
-﻿using GoapWorld;
-
-class Test
-{
-    public string Name;
-
-    public Test(string name)
-    {
-        Name = name;
-    }
-
-    public void Attack()
-    {
-        Console.WriteLine($"{Name} attaque !");
-    }
-}
+﻿using System.Diagnostics;
+using GoapWorld;
+using GoapWorld.GOAP;
+using GoapWorld.GOAP.Actions;
+using GoapAction = GoapWorld.GOAP.Action;
 
 class Program
 {
     static void Main()
     {
-        Test robot = new Test("Bob jhon");
+        Planner planner = new Planner();
 
-        robot.Attack();
+        List<GoapAction> availableActions = [
+            new EatAction()
+        ];
+
+        List<State> goalStates = [
+            new("IsFed", true)
+        ];
+
+        Plan resultat = planner.MakePlan(goalStates, availableActions);
+
+        Console.WriteLine("Lets go : ");
+        Console.WriteLine(resultat.Steps);
+        Console.WriteLine(resultat);
+
+        while (true)
+        {
+            
+        }
     }
 }

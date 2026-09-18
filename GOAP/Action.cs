@@ -9,8 +9,8 @@ public class Action
 
     public string Title;
     public float Cost;
-    public List<ActionFact> Requirements;
-    public List<ActionFact> Consequences;
+    public List<State> Requirements;
+    public List<State> Consequences;
 
     /// <summary>
     /// Crée une action pour le système GOAP.
@@ -19,7 +19,7 @@ public class Action
     /// <param name="cose">Le côut de l'action</param>
     /// <param name="requirements">La liste des pré-requis.</param>
     /// <param name="consequences">La liste des conséquences.</param>
-    public Action(string title, float cost, List<ActionFact> requirements, List<ActionFact> consequences)
+    public Action(string title, float cost, List<State> requirements, List<State> consequences)
     {
         Title = title;
         Cost = cost;

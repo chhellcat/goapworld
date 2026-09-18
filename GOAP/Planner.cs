@@ -6,7 +6,19 @@ namespace GoapWorld.GOAP;
 public class Planner
 {
 
-    private Action FindRandomAntecedent(List<State> goalStates, List<Action> availableActions)
+    public bool IsStateInList(State state, List<State> list)
+    {
+        foreach (State otherState in list)
+        {
+            if (otherState.Matches(state))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Action GetRandomAntecedent(List<State> goalStates, List<Action> availableActions)
     {
         List<Action> validActions = [];
 
@@ -18,31 +30,19 @@ public class Planner
             // Vérifie chaque état demandé
             foreach (State desiredState in goalStates)
             {
-                bool found = false;
+                bool isDesiredStateInConsequences = IsStateInList(desiredState, action.Consequences);
 
-                // Cherche l'état dans les conséquences de l'action
-                foreach (State consequence in action.Consequences)
-                {
-                    if (consequence.Matches(desiredState))
-                    {
-                        found = true;
-                        break;
-                    }
-                }
-
-                // Un état demandé n'est pas satisfait
-                if (!found)
-                {
+                // Si on trouve pas un des state demandé dans la liste des conséquence, 
+                // c'est donc invalide
+                if (isDesiredStateInConsequences == false)
                     valid = false;
                     break;
-                }
             }
 
             if (valid)
                 validActions.Add(action);
         }
 
-        // TODO : choisir une action au hasard
         return validActions[0];
     }
 
@@ -52,6 +52,7 @@ public class Planner
     public Plan MakePlan(List<State> goalStates, List<Action> avaliableActions)
     {
         // 1. Chercher une action qui accomplit cette liste d'état
-
+        Action antecedent = GetRandomAntecedent(goalStates, avaliableActions);
+        return new Plan();
     }
 }

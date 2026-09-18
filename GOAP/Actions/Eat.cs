@@ -10,6 +10,7 @@ public class EatAction : GoapAction
 {
     public EatAction() : base(
         "Manger",
+        1,
         [new("HasFood", true)],
         [new("HasFood", false), new("IsFed", true)]
     )

@@ -24,6 +24,14 @@ public struct Plan
     public Plan(List<State> goal)
     {
         Goal = goal;
+        Steps = new List<Action>();
+        Cost = 0;
+    }
+
+    // Représentation écrite
+    public override string ToString()
+    {
+        return $"[{string.Join(" > ", Steps.Select(action => action.Title))}]";
     }
 
     /// <summary>
