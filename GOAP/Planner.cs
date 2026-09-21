@@ -15,11 +15,11 @@ public class Planner
         );
     }
 
-    private Blob IsAllStatesInList(List<State> requiredStates, List<State> statesList)
+    private bool IsAllStatesInList(List<State> requiredStates, List<State> statesList)
     {
-        return requiredStates.All(requirement =>
-                requirement.IsInList(statesList)
-            )
+        return requiredStates.All(
+            requirement => requirement.IsInList(statesList)
+        );
     }
 
     /// <param name="goalStates">Liste d'état qui consititues l'objectif</param>
