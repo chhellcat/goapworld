@@ -1,3 +1,5 @@
+using GoapWorld.Game.Entites.Types;
+
 namespace GoapWorld.Game.Objects.Types;
 
 /// <summary>
@@ -13,7 +15,7 @@ class _Food : _AnyObject
         Tags.Add("Food");
     }
 
-    public void ConsumedBy()
+    public virtual void ConsumedBy(_AnyEntities entity)
     {
         // Overwirte
     }

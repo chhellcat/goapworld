@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace GoapWorld.GOAP;
 
 /// <summary>
@@ -18,5 +20,16 @@ public struct State
     public bool Matches(State other)
     {
         return Name == other.Name && Value == other.Value;
+    }
+
+    public bool IsInList(List<State> list)
+    {
+        foreach (State otherState in list)
+        {
+            if (this.Matches(otherState))
+                return true;
+        }
+
+        return false;
     }
 }

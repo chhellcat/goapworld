@@ -6,28 +6,20 @@ namespace GoapWorld.GOAP;
 public class Planner
 {
 
-    public bool IsStateInList(State state, List<State> list)
-    {
-        foreach (State otherState in list)
-        {
-            if (otherState.Matches(state))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private Action? GetAntecedent(
-        List<State> goalStates,
-        List<Action> availableActions
-    )
+    private Action? GetAntecedent(List<State> goalStates, List<Action> availableActions)
     {
         return availableActions.FirstOrDefault(action =>
             goalStates.All(goal =>
-                IsStateInList(goal, action.Consequences)
+                goal.IsInList(action.Consequences)
             )
         );
+    }
+
+    private Blob IsAllStatesInList(List<State> requiredStates, List<State> statesList)
+    {
+        return requiredStates.All(requirement =>
+                requirement.IsInList(statesList)
+            )
     }
 
     /// <param name="goalStates">Liste d'état qui consititues l'objectif</param>
@@ -39,23 +31,29 @@ public class Planner
         List<Action> availableActions
     )
     {
-        // Prépration d'un plan vide : 
+        // Prépration d'un plan vide 
         Plan plan = new Plan(goalStates);
 
+        // Recher pour ces objectifs
+        List<State> currentGoalStates = goalStates;
+
         // Ajout d'action succésives jusqu'a que le plan soi réalisable
-        while (true)
+        while (IsAllStatesInList(currentGoalStates, currentStates))
         {
-            Action? antecedent = GetAntecedent(goalStates, availableActions);
+            Action? antecedent = GetAntecedent(currentGoalStates, availableActions);
 
             if (antecedent == null)
+            {
+                // Si il n'y a pas d'antecedent, impossible de faire un plan
                 Console.WriteLine("Aucun plan possible");
                 return plan;
+            }
 
+            // Ajout de l'étape au plan
             plan.AddStep(antecedent);
-
-            ...
-
-            return plan;
+            currentGoalStates = antecedent.Requirements;
         }
+
+        return plan;
     }
 }

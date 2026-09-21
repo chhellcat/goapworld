@@ -15,10 +15,24 @@ class _AnyEntities
     /// </summary>
     public List<string> Tags = [];
 
+    /// <summary>
+    /// Le besoin en nourriture
+    /// </summary>
+    public float NeedFood = 0;
+
     // constructeur
     public _AnyEntities()
     {
         
+    }
+
+    /// <summary>
+    /// Est appelé à chaque tick avec le delta
+    /// </summary>
+    /// <param name="deltaTime"></param>
+    public void Tick(float deltaTime)
+    {
+        NeedFood += deltaTime; // 1 par secondes
     }
     
 }
