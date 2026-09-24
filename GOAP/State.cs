@@ -17,6 +17,11 @@ public struct State
         Value = value;
     }
 
+    public override string ToString()
+    {
+        return $"{{{Name}: {Value}}}";
+    }
+
     public bool Matches(State other)
     {
         return Name == other.Name && Value == other.Value;

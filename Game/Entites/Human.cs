@@ -2,7 +2,7 @@ using GoapWorld.Game.Entites.Types;
 
 namespace GoapWorld.Game.Entites;
 
-class Human : _AnyEntities
+public class Human : _AnyEntities
 {
 
     public string Name;

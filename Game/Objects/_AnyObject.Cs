@@ -5,7 +5,7 @@ namespace GoapWorld.Game.Objects.Types;
 /// <summary>
 /// Représente tout les objets
 /// </summary>
-class _AnyObject
+public class _AnyObject
 {
     public string Name;
 

@@ -1,3 +1,5 @@
+using GoapWorld.Game.Entites.Types;
+
 namespace GoapWorld.GOAP;
 
 /// <summary>
@@ -25,6 +27,21 @@ public class Action
         Cost = cost;
         Requirements = requirements;
         Consequences = consequences;
+    }
+
+    public override string ToString()
+    {
+        return $"<{Title}>";
+    }
+
+    /// <summary>
+    /// Execute l'action dans le game
+    /// </summary>
+    /// <returns> Si l'action s'est correctement dérouler</returns>
+    public virtual bool Execute(_AnyEntities entity)
+    {
+        // Overwrite
+        return true;
     }
     
 }

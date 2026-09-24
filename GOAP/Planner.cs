@@ -1,3 +1,5 @@
+using EasyDebug;
+
 namespace GoapWorld.GOAP;
 
 /// <summary>
@@ -38,7 +40,7 @@ public class Planner
         List<State> currentGoalStates = goalStates;
 
         // Ajout d'action succésives jusqu'a que le plan soi réalisable
-        while (IsAllStatesInList(currentGoalStates, currentStates))
+        while (!IsAllStatesInList(currentGoalStates, currentStates))
         {
             Action? antecedent = GetAntecedent(currentGoalStates, availableActions);
 
@@ -46,7 +48,7 @@ public class Planner
             {
                 // Si il n'y a pas d'antecedent, impossible de faire un plan
                 Console.WriteLine("Aucun plan possible");
-                return plan;
+                break;
             }
 
             // Ajout de l'étape au plan

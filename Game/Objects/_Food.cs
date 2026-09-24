@@ -2,10 +2,16 @@ using GoapWorld.Game.Entites.Types;
 
 namespace GoapWorld.Game.Objects.Types;
 
+// Interface nourriture
+public interface IFood
+{
+    void ConsumedBy(_AnyEntities entity);
+}
+
 /// <summary>
 /// Représente les objets nourriture
 /// </summary>
-class _Food : _AnyObject
+public class _Food : _AnyObject, IFood
 {
     
     // Constructeur

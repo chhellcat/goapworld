@@ -1,7 +1,7 @@
 using GoapWorld.Game.Entites.Types;
 using GoapWorld.Game.Objects.Types;
 
-class Apple : _Food
+public class Apple : _Food
 {
     // Constructeur
     public Apple() : base("Apple")
@@ -12,6 +12,6 @@ class Apple : _Food
     public override void ConsumedBy(_AnyEntities entity)
     {
         base.ConsumedBy(entity);
-        entity.NeedFood -= 25;
+        entity.Stats.Food += 25;
     }
 }
